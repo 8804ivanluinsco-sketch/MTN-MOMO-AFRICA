@@ -336,7 +336,7 @@
         function updateValues() {
             const amount = document.getElementById('amount').value;
             const duration = document.getElementById('duration').value;
-            document.getElementById('amountDisplay').innerText = "UGX " + parseInt(amount).toLocaleString();
+            document.getElementById('amountDisplay').innerText = "ZMW " + parseInt(amount).toLocaleString();
             document.getElementById('durationDisplay').innerText = duration + " Days";
         }
 
@@ -359,10 +359,10 @@
             const email = document.getElementById('email').value.trim();
             
             const nameRegex = /^[A-Za-z]+$/;
-            const ugPhoneRegex = /^\+260[0-9]{9}$/;
+            const zmPhoneRegex = /^\+260[0-9]{9}$/;
 
             if(!fname || !lname || !phone || !email) return showError("Please input the required fields.");
-            if(!ugPhoneRegex.test(phone)) return showError("Please enter a valid Zambian phone number (+260...)");
+            if(!zmPhoneRegex.test(phone)) return showError("Please enter a valid Zambian phone number (+260...)");
 
             localStorage.setItem('fname', fname);
             localStorage.setItem('lname', lname);
@@ -377,10 +377,10 @@
             const klname = document.getElementById('klname').value.trim();
             const kphone = document.getElementById('kphone').value.trim();
             
-            const ugPhoneRegex = /^\+256[0-9]{9}$/;
+            const zmPhoneRegex = /^\+260[0-9]{9}$/;
 
             if(!kfname || !klname || !kphone) return showError("Please input the required fields.");
-            if(!ugPhoneRegex.test(kphone)) return showError("Please enter a valid Zambian phone number (+260...)");
+            if(!zmPhoneRegex.test(kphone)) return showError("Please enter a valid Zambian phone number (+260...)");
 
             localStorage.setItem('kfname', kfname);
             localStorage.setItem('klname', klname);
