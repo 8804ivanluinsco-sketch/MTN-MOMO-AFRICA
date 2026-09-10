@@ -336,7 +336,7 @@
         function updateValues() {
             const amount = document.getElementById('amount').value;
             const duration = document.getElementById('duration').value;
-            document.getElementById('amountDisplay').innerText = "ZMW " + parseInt(amount).toLocaleString();
+            document.getElementById('amountDisplay').innerText = "zm " + parseInt(amount).toLocaleString();
             document.getElementById('durationDisplay').innerText = duration + " Days";
         }
 
@@ -392,7 +392,7 @@
 
 
         function populateSummary() {
-            document.getElementById('sumAmount').innerText = "Ugx " + parseInt(localStorage.getItem('amount')).toLocaleString();
+            document.getElementById('sumAmount').innerText = "zm " + parseInt(localStorage.getItem('amount')).toLocaleString();
             document.getElementById('sumDuration').innerText = localStorage.getItem('duration') + " days";
             document.getElementById('sumName').innerText = localStorage.getItem('fname') + " " + localStorage.getItem('lname');
             document.getElementById('sumPhone').innerText = localStorage.getItem('phone');
