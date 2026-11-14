@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Momo-Loans Africa | Portail de Crédit Personnel</title>
+    <title>MoMo-Loans Cameroun | Portail de Crédit Mobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -16,26 +16,52 @@
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
+        @keyframes pulse-ring {
+            0% { transform: scale(0.8); opacity: 0.8; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+        .animate-pulse-ring::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 9999px;
+            background-color: #10b981;
+            animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-900 font-sans antialiased min-h-screen flex flex-col md:flex-row">
 
+    <!-- Barre latérale (Desktop) -->
     <aside class="hidden md:flex md:w-64 lg:w-72 bg-indigo-950 text-white flex-col fixed h-full z-30 border-r border-indigo-900">
         <div class="p-6 bg-indigo-900/50 border-b border-indigo-900">
-            <h1 class="text-2xl font-black tracking-tight text-indigo-100">Mo-Loans</h1>
-            <p class="text-xs text-indigo-300 opacity-80">Interface de Gestion</p>
+            <div class="flex items-center justify-between">
+                <h1 class="text-2xl font-black tracking-tight text-indigo-100">MoMo-Loans</h1>
+                <span class="text-[10px] font-bold bg-amber-400 text-indigo-950 px-2 py-0.5 rounded">CM 🇨🇲</span>
+            </div>
+            <p class="text-xs text-indigo-300 opacity-80 mt-1">Console de Crédit & Validation</p>
         </div>
         
         <nav class="flex-1 p-4 space-y-3">
-            <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block px-2">STATUT DU PRÊT</span>
-            <div class="bg-amber-500/10 border border-amber-500/30 text-amber-400 p-3 rounded-xl text-xs font-semibold">
-                ⏳ EXAMEN DE CONFORMITÉ EN COURS
+            <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block px-2">ÉTAT DU DOSSIER</span>
+            <div class="bg-amber-500/15 border border-amber-500/40 text-amber-300 p-3 rounded-xl text-xs font-semibold flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                <span>VALIDATION WHATSAPP REQUISE</span>
             </div>
-            <div class="text-slate-500 border border-transparent p-3 rounded-xl text-xs font-semibold opacity-40 cursor-not-allowed">
-                DÉCAISSEMENT APPROUVÉ
+            <div class="text-slate-400 border border-transparent p-3 rounded-xl text-xs font-semibold opacity-50 cursor-not-allowed">
+                ✓ DÉCAISSEMENT MOBILE MONEY
             </div>
-            <div class="text-slate-500 border border-transparent p-3 rounded-xl text-xs font-semibold opacity-40 cursor-not-allowed">
-                DEMANDE REFUSÉE
+            <div class="text-slate-400 border border-transparent p-3 rounded-xl text-xs font-semibold opacity-40 cursor-not-allowed">
+                ✕ DOSSIER REJETÉ
+            </div>
+
+            <!-- Raccourci WhatsApp Sidebar -->
+            <div class="pt-4">
+                <a href="https://wa.me/254752606436?text=Bonjour%20le%20support%20MoMo-Loans%20Cameroun%2C%20je%20souhaite%20finaliser%20la%20v%C3%A9rification%20et%20la%20validation%20de%20mon%20dossier%20%23MS-77291." target="_blank"
+                   class="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs py-3 px-3 rounded-xl shadow-lg shadow-emerald-950/50 transition-all">
+                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
+                    <span>Valider sur WhatsApp</span>
+                </a>
             </div>
         </nav>
 
@@ -46,98 +72,204 @@
         </div>
     </aside>
 
-    <header class="md:hidden bg-indigo-950 text-white px-4 pt-5 pb-4 flex justify-between items-center sticky top-0 z-30 shadow-md">
+    <!-- En-tête Mobile Sticky -->
+    <header class="md:hidden bg-indigo-950 text-white px-4 py-3.5 flex justify-between items-center sticky top-0 z-30 shadow-md border-b border-indigo-900/80">
         <div>
-            <h1 class="text-xl font-black tracking-tight text-indigo-200">MOMO-LOANS AFRICA</h1>
-            <p class="text-[10px] text-indigo-300 opacity-90">Console de Crédit Sécurisée</p>
+            <div class="flex items-center gap-1.5">
+                <h1 class="text-base sm:text-lg font-black tracking-tight text-white">MOMO-LOANS</h1>
+                <span class="text-[9px] font-extrabold bg-amber-400 text-indigo-950 px-1.5 py-0.5 rounded">CAMEROUN</span>
+            </div>
+            <div class="flex items-center gap-1.5 mt-0.5">
+                <span class="relative flex h-2 w-2">
+                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <p class="text-[10px] text-emerald-300 font-medium">Serveur Live • <span id="mobileClock">--:--</span></p>
+            </div>
         </div>
-        <div>
-            <span class="inline-block bg-indigo-900 text-indigo-200 text-[9px] font-mono px-2 py-0.5 rounded-full border border-indigo-800">
-                ID : #MS-77291
+        <div class="text-right">
+            <span class="inline-block bg-indigo-900 text-indigo-200 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg border border-indigo-700">
+                #MS-77291
             </span>
         </div>
     </header>
 
-    <div class="flex-1 md:ml-64 lg:ml-72 flex flex-col bg-slate-50 min-h-screen">
+    <!-- Conteneur Principal -->
+    <div class="flex-1 md:ml-64 lg:ml-72 flex flex-col bg-slate-100 min-h-screen">
         
-        <div class="hidden md:flex bg-white border-b border-slate-200 px-8 py-4 justify-between items-center">
-            <h2 class="text-lg font-bold text-slate-800">Console du Compte</h2>
-            <div class="text-right text-xs text-slate-400">
-                <span>Référence de la demande : </span>
-                <span class="font-mono font-bold text-slate-600 bg-slate-100 px-2 py-0.5 rounded">#MS-77291</span>
+        <!-- Barre supérieure Desktop -->
+        <div class="hidden md:flex bg-white border-b border-slate-200 px-8 py-4 justify-between items-center sticky top-0 z-20">
+            <div class="flex items-center gap-3">
+                <h2 class="text-lg font-bold text-slate-800">Tableau de Bord Client</h2>
+                <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    Système en direct • <span id="desktopClock">--:--:--</span>
+                </span>
+            </div>
+            <div class="text-right text-xs text-slate-500">
+                <span>Dossier N° : </span>
+                <span class="font-mono font-bold text-slate-800 bg-slate-100 px-2.5 py-1 rounded border border-slate-200">#MS-77291</span>
             </div>
         </div>
 
-        <main class="flex-1 p-4 md:p-8 space-y-4 md:space-y-6 max-w-5xl w-full mx-auto pb-24 md:pb-8">
+        <main class="flex-1 p-3.5 sm:p-5 md:p-8 space-y-4 md:space-y-6 max-w-5xl w-full mx-auto pb-28 md:pb-10">
             
-            <section class="bg-white border-l-4 border-indigo-600 rounded-r-xl p-4 md:p-6 shadow-sm border border-slate-200/60">
-                <div class="flex items-center space-x-2 text-indigo-950 font-bold text-sm md:text-base mb-1">
-                    <svg class="w-4 h-4 text-indigo-600 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    <span>Phase de Vérification Active</span>
+            <!-- CARTE PRIORITAIRE WHATSAPP (Ultra visible sur mobile et desktop) -->
+            <section class="bg-gradient-to-br from-emerald-600 via-emerald-600 to-teal-700 rounded-2xl p-4 sm:p-6 text-white shadow-lg shadow-emerald-900/15 border border-emerald-400/30 relative overflow-hidden">
+                <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                    <div class="space-y-1.5">
+                        <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-amber-300 animate-ping"></span>
+                            <span>Action Requise • Validation Finale</span>
+                        </div>
+                        <h2 class="text-lg sm:text-xl md:text-2xl font-black leading-tight">
+                            Finalisez votre vérification sur WhatsApp
+                        </h2>
+                        <p class="text-xs sm:text-sm text-emerald-50 leading-relaxed max-w-2xl">
+                            Votre demande de crédit est pré-approuvée. Veuillez contacter immédiatement un <strong>agent de support agréé via WhatsApp</strong> pour valider votre identité et déclencher le transfert vers votre compte <strong>MTN MoMo ou Orange Money</strong>.
+                        </p>
+                    </div>
+
+                    <div class="shrink-0 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center gap-2 pt-1 lg:pt-0">
+                        <a href="https://wa.me/254752606436?text=Bonjour%20le%20support%20MoMo-Loans%20Cameroun%2C%20je%20souhaite%20finaliser%20la%20v%C3%A9rification%20et%20la%20validation%20de%20mon%20dossier%20%23MS-77291." 
+                           target="_blank"
+                           class="flex items-center justify-center gap-2.5 bg-white text-emerald-800 hover:bg-amber-300 hover:text-slate-950 font-black text-sm sm:text-base px-5 py-3.5 rounded-xl shadow-md transition-all active:scale-95 text-center">
+                            <svg class="w-5 h-5 fill-current shrink-0 text-emerald-600" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
+                            <span>DISCUTER SUR WHATSAPP</span>
+                        </a>
+                        <span class="text-[10px] text-center text-emerald-100 font-medium">
+                            🟢 Conseiller disponible • Réponse en moins de 2 min
+                        </span>
+                    </div>
                 </div>
-                <p class="text-xs md:text-sm text-slate-600 italic leading-relaxed">
-                    "Le suivi financier et l'audit garantissent une structure durable pour nos clients. Notre équipe de conformité vérifie la télémétrie et les identifiants soumis avant d'initialiser le décaissement."
-                </p>
+            </section>
+
+            <!-- Progression en Direct -->
+            <section class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200/80">
+                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <div class="flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
+                        <h3 class="text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wide">Progression du Dossier #MS-77291</h3>
+                    </div>
+                    <span class="text-xs font-extrabold text-indigo-700 bg-indigo-50 px-2.5 py-0.5 rounded-full border border-indigo-100">
+                        Étape 2 sur 3 (80%)
+                    </span>
+                </div>
+
+                <!-- Barre de progression -->
+                <div class="w-full bg-slate-100 h-2.5 rounded-full overflow-hidden mb-3">
+                    <div class="bg-gradient-to-r from-indigo-600 to-emerald-500 h-full rounded-full transition-all duration-1000" style="width: 80%;"></div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2 text-center text-[11px] sm:text-xs font-semibold">
+                    <div class="bg-emerald-50 border border-emerald-200 text-emerald-700 py-2 px-1 rounded-xl">
+                        ✓ 1. Demande reçue
+                    </div>
+                    <div class="bg-amber-50 border-2 border-amber-400 text-amber-800 py-2 px-1 rounded-xl font-bold shadow-xs">
+                        ⏳ 2. Vérif. WhatsApp
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 text-slate-400 py-2 px-1 rounded-xl">
+                        3. Dépôt MoMo / OM
+                    </div>
+                </div>
             </section>
 
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-4 md:gap-6 items-start">
                 
                 <div class="lg:col-span-2 space-y-4 md:space-y-6">
                     
-                    <section class="md:hidden bg-white rounded-xl p-3 shadow-sm border border-slate-200/60">
-                        <h3 class="text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-2 px-1">Statut du Prêt</h3>
-                        <div class="grid grid-cols-3 gap-2 text-center text-xs font-semibold">
-                            <div class="bg-amber-50 border border-amber-200 text-amber-700 py-2 rounded-lg">En attente</div>
-                            <div class="bg-slate-100 text-slate-400 py-2 rounded-lg opacity-40 cursor-not-allowed">Approuvé</div>
-                            <div class="bg-slate-100 text-slate-400 py-2 rounded-lg opacity-40 cursor-not-allowed">Refusé</div>
+                    <!-- Centre d'Action et Partage -->
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+                                <svg class="w-4 h-4 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                Centre de Validation & Accélération
+                            </h3>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase">MTN / Orange</span>
                         </div>
-                    </section>
 
-                    <section class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-slate-200/60 space-y-4">
-                        <h3 class="text-sm md:text-base font-bold text-slate-800 flex items-center gap-2">
-                            <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            Centre d'Action
-                        </h3>
-
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                            <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200/80">
-                                <span class="text-xs font-bold text-indigo-900 block mb-0.5">Lien d'Accélération</span>
-                                <p class="text-[11px] text-slate-500 mb-2.5">Optimisez les priorités de vérification en établissant des connexions de nœuds.</p>
-                                <div class="flex gap-2">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
+                            <!-- Bloc Lien d'Accélération -->
+                            <div class="bg-slate-50 rounded-xl p-3.5 border border-slate-200">
+                                <span class="text-xs font-bold text-indigo-950 block mb-1">Lien de Parrainage Prioritaire</span>
+                                <p class="text-[11px] text-slate-500 mb-2.5 leading-snug">
+                                    Partagez ce lien pour accélérer la file d'attente de traitement de votre prêt.
+                                </p>
+                                <div class="flex gap-1.5">
                                     <input type="text" id="refLink" readonly value="https://mtn-momo-africa.vercel.app" 
-                                           class="bg-white border border-slate-300 rounded-md p-2 text-xs font-mono flex-1 min-w-0 text-slate-700 focus:outline-none">
-                                    <button onclick="copyLink()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-3 py-2 rounded-md transition-colors active:scale-95 shrink-0">
+                                           class="bg-white border border-slate-300 rounded-lg px-2.5 py-2 text-xs font-mono flex-1 min-w-0 text-slate-700 focus:outline-none">
+                                    <button onclick="copyLink()" class="bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-bold px-3 py-2 rounded-lg transition-colors active:scale-95 shrink-0">
                                         Copier
                                     </button>
                                 </div>
                             </div>
 
-                            <div class="flex flex-col justify-between space-y-3">
-                                <div class="hidden md:block text-xs text-slate-500 leading-normal">
-                                    Besoin d'un mappage de compte direct ou d'une assistance au traitement ? Contactez votre agent technique désigné via les canaux de messagerie instantanée.
+                            <!-- Bloc Assistance Directe WhatsApp -->
+                            <div class="bg-emerald-50/70 rounded-xl p-3.5 border border-emerald-200 flex flex-col justify-between space-y-2.5">
+                                <div>
+                                    <span class="text-xs font-bold text-emerald-950 block mb-1">Validation par Agent</span>
+                                    <p class="text-[11px] text-emerald-800 leading-snug">
+                                        Écrivez directement au service client pour confirmer votre numéro de réception.
+                                    </p>
                                 </div>
-                                <a href="https://wa.me/254135436374" target="_blank" 
-                                   class="flex items-center justify-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs md:text-sm font-bold p-3 rounded-xl transition-all active:scale-[0.99] shadow-sm">
-                                    <svg class="w-4 h-4 md:w-5 md:h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
-                                    <span>Contacter le Support WHATSAPP</span>
+                                <a href="https://wa.me/254752606436?text=Bonjour%20le%20support%20MoMo-Loans%20Cameroun%2C%20je%20souhaite%20finaliser%20la%20v%C3%A9rification%20et%20la%20validation%20de%20mon%20dossier%20%23MS-77291." target="_blank" 
+                                   class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-3 rounded-lg transition-all active:scale-95 shadow-xs">
+                                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
+                                    <span>Contacter le Support WhatsApp</span>
                                 </a>
                             </div>
                         </div>
 
-                        <p class="text-[10px] text-slate-400 text-center leading-tight pt-1 border-t border-slate-100">
-                            Le décaissement est acheminé dynamiquement sur les réseaux autorisés dès confirmation du grand livre.
+                        <p class="text-[11px] text-slate-500 text-center leading-tight pt-2 border-t border-slate-100">
+                            Les fonds sont envoyés instantanément en <strong>FCFA (XAF)</strong> dès que l'agent valide votre fiche.
                         </p>
                     </section>
 
-                    <section class="bg-white rounded-xl p-4 md:p-6 shadow-sm border border-slate-200/60">
-                        <h3 class="text-sm md:text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
+                    <!-- Flux Live des Décaissements au Cameroun -->
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-sm sm:text-base font-bold text-slate-800 flex items-center gap-2">
+                                <span class="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                                Décaissements Récents (En direct)
+                            </h3>
+                            <span class="text-[10px] font-semibold text-slate-400">Cameroun</span>
+                        </div>
+                        
+                        <div id="liveFeed" class="space-y-2.5 text-xs">
+                            <!-- Injecté dynamiquement par JS -->
+                        </div>
+                    </section>
+
+                    <!-- Avis Clients Cameroun -->
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+                        <h3 class="text-sm sm:text-base font-bold text-slate-800 mb-3 flex items-center gap-2">
                             <svg class="w-4 h-4 text-amber-500" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"></path></svg>
-                            Activité et Expérience Utilisateur
+                            Retours des Bénéficiaires
                         </h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-3 text-[11px] md:text-xs leading-snug">
-                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-150">
-                                <span class="text-amber-500 block text-[10px] mb-1">★★★★★</span>
-                                <span class="font-bold text-slate-700">Tendai M.</span> : Traitement finalisé et attribué sans friction.
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs leading-snug">
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/70">
+                                <span class="text-amber-500 block text-[11px] mb-1">★★★★★</span>
+                                <span class="font-bold text-slate-800">Jean-Paul N. (Douala)</span> : Validation rapide sur WhatsApp, dépôt MTN MoMo reçu en 5 minutes.
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/70">
+                                <span class="text-amber-500 block text-[11px] mb-1">★★★★★</span>
+                                <span class="font-bold text-slate-800">Clarisse M. (Yaoundé)</span> : Le conseiller m'a bien guidée pour finaliser mon dossier sans stress.
+                            </div>
+                            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/70">
+                                <span class="text-amber-500 block text-[11px] mb-1">★★★★★</span>
+                                <span class="font-bold text-slate-800">Abdoulaye K. (Garoua)</span> : Service sérieux et réactif sur Orange Money.
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Colonne Règles et Conditions -->
+                <div class="lg:col-span-1 space-y-4">
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200/80">
+                        <h3 class="text-sm font-bold text-slate-800 mb-2.5">Conditions & Conformité</h3>
+                        <ul class="list-disc pl-4 text-xs text-slate-600 space-y-2.5 leading-relaxed">
+                            <li>La vérification d'identité auprès d'un agent WhatsApp est obligatoire avant tout décaissement.</li>
+                            <li>Les dossiers non confirmés sous 48 à 72 heures sont automatiquement mis enxt-slate-700">Tendai M.</span> : Traitement finalisé et attribué sans friction.
                             </div>
                             <div class="p-3 bg-slate-50 rounded-xl border border-slate-150">
                                 <span class="text-amber-500 block text-[10px] mb-1">★★★★★</span>
